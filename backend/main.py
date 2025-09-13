@@ -212,11 +212,17 @@ async def clear_queue():
     packet_queue.clear()
     return {"message": "Queue cleared"}
 
-# Mount the React frontend build files
-app.mount("/", StaticFiles(directory="../frontend/build", html=True), name="static")
+# Mount the React frontend build files (only if build directory exists)
+import os
+build_dir = "../frontend/build"
+if os.path.exists(build_dir):
+    app.mount("/", StaticFiles(directory=build_dir, html=True), name="static")
+    print("✅ Frontend build directory found - serving built React app")
+else:
+    print("⚠️  Frontend build directory not found - running API only mode")
+    print("💡 To serve the frontend, run: cd ../frontend && npm run build")
 
 if __name__ == "__main__":
     import uvicorn
-    import os
     port = int(os.getenv("PORT", "5000"))
     uvicorn.run(app, host="0.0.0.0", port=port)
