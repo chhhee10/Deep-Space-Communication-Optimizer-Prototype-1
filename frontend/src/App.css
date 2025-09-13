@@ -1,0 +1,264 @@
+.App {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-header {
+  background-color: #1a1a2e;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.App-header p {
+  margin: 10px 0 0 0;
+  opacity: 0.8;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.left-panel, .right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Packet Creator */
+.packet-creator {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.packet-creator h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+.create-btn, .transmit-btn, .clear-btn, .update-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.create-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.transmit-btn {
+  background-color: #007bff;
+  color: white;
+  margin-right: 10px;
+}
+
+.clear-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.update-btn {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.create-btn:hover { background-color: #218838; }
+.transmit-btn:hover { background-color: #0056b3; }
+.clear-btn:hover { background-color: #c82333; }
+.update-btn:hover { background-color: #138496; }
+
+.transmit-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.transmission-controls {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* System Stats */
+.system-stats {
+  background: #e9ecef;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.system-stats h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.stat-item {
+  text-align: center;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Packet Queue */
+.packet-queue {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.packet-queue h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.queue-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.packet-item {
+  background: white;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.packet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.packet-type {
+  font-weight: bold;
+}
+
+.packet-status {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.packet-data {
+  color: #666;
+  margin-bottom: 8px;
+  font-family: monospace;
+}
+
+.packet-info {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.empty-queue {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Config Panel */
+.config-panel {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.config-panel h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.config-panel small {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+/* Transmission Chart */
+.transmission-chart {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.transmission-chart h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .App-header h1 {
+    font-size: 2rem;
+  }
+}
